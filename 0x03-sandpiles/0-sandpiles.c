@@ -27,28 +27,64 @@ static void print_grid(int grid[3][3])
  * split - split the sell if the number is over than 4
  * @grid: 3x3 grid
  *
+ *
+ * this is algrithem 1 but cannot pass all the checks
+ * void split(int grid[3][3])
+ * {
+ *	int i, j;
+ *
+ *	for (i = 0; i < 3; i++)
+ *	{
+ *		for (j = 0; j < 3; j++)
+ *		{
+ *			if (grid[i][j] > 3)
+ *			{
+ *				grid[i][j] -= 4;
+ *				if ((i - 1) >= 0)
+ *					grid[i - 1][j] += 1;
+ *				if ((i + 1) <= 2)
+ *					grid[i + 1][j] += 1;
+ *				if ((j - 1) >= 0)
+ *					grid[i][j - 1] += 1;
+ *				if ((j + 1) <= 2)
+ *					grid[i][j + 1] += 1;
+ *			}
+ *		}
+ *	}
+ *}
  */
 
 void split(int grid[3][3])
 {
 	int i, j;
+	int grid_tmp[3][3] = {
+	{0, 0, 0},
+	{0, 0, 0},
+	{0, 0, 0}
+	};
+
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 3; j++)
+		{
+			grid_tmp[i][j] = grid[i][j];
+		}
+	}
 
 	for (i = 0; i < 3; i++)
 	{
 		for (j = 0; j < 3; j++)
 		{
 			if (grid[i][j] > 3)
-			{
 				grid[i][j] -= 4;
-				if ((i - 1) >= 0)
-					grid[i - 1][j] += 1;
-				if ((i + 1) <= 2)
-					grid[i + 1][j] += 1;
-				if ((j - 1) >= 0)
-					grid[i][j - 1] += 1;
-				if ((j + 1) <= 2)
-					grid[i][j + 1] += 1;
-			}
+			if ((i - 1) >= 0 && grid_tmp[i - 1][j] > 3)
+				grid[i][j] += 1;
+			if ((i + 1) <= 2 && grid_tmp[i + 1][j] > 3)
+				grid[i][j] += 1;
+			if ((j - 1) >= 0 && grid_tmp[i][j - 1] > 3)
+				grid[i][j] += 1;
+			if ((j + 1) <= 2 && grid_tmp[i][j + 1] > 3)
+				grid[i][j] += 1;
 		}
 	}
 }
