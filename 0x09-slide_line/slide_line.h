@@ -1,13 +1,13 @@
-#ifndef _SLIDE_LINE_H
-#define _SLIDE_LINE_H
 
-#include <stddef.h>
+#ifndef SLIDE_LINE_H
+#define SLIDE_LINE_H
+
 #include <stdio.h>
-#define SLIDE_LEFT      'L'
-#define SLIDE_RIGHT     'R'
+#include <stdlib.h>
 
-/* Function Definitions */
+#define SLIDE_LEFT 0
+#define SLIDE_RIGHT 1
+
 int slide_line(int *line, size_t size, int direction);
-void shift(int *arr, int size, int direction);
 
 #endif
