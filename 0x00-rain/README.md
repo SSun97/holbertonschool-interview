@@ -27,7 +27,8 @@ jesse@ubuntu:~/0x00$
 ```
 Visual representation of the walls [0, 1, 0, 2, 0, 3, 0, 4]
 
-
+![alt text](https://github.com/SSun97/holbertonschool-interview/blob/main/0x00-rain/pic1.png)
 
 Visual representation of the walls [2, 0, 0, 4, 0, 0, 1, 0]
 
+![alt text](https://github.com/SSun97/holbertonschool-interview/blob/main/0x00-rain/pic2.png)
