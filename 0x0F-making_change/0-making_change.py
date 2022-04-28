@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+Main file for testing
+"""
+
 
 def makeChange(coins, total):
     """
@@ -25,4 +29,3 @@ def makeChange(coins, total):
         return -1
 
     return memo[total]
-    
